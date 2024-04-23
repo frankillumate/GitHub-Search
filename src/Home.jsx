@@ -10,14 +10,16 @@ function Home() {
   const [searchField, setSearchfield] = useState("");
   const [pageCount, setPageCount] = useState(0);
 
-  useEffect(() => {git
+  useEffect(() => {
     const fetchRepos = async () => {
       try {
         const response = await fetch(
           "https://api.github.com/users/frankillumate/repos",
           {
             headers: {
-              Authorization: "Bearer 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",
+              Authorization: import.meta.env.VITE_TOKEN
+              
+              // "Bearer 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",
             },
           }
         );
@@ -26,10 +28,13 @@ function Home() {
         }
         const data = await response.json();
         setRepos(data);
+
+        console.log(data);
       } catch (error) {}
     };
     fetchRepos();
   }, []);
+
 
   useEffect(() => {
     const filteredSearch = repos.filter((repo) => {
@@ -126,3 +131,11 @@ function Home() {
 }
 
 export default Home;
+
+
+// Create .env file
+// VITE_TOKEN = “” //your token
+// Fetch(API, {
+// Method: GET,
+// headers: { Authorization: import.meta.env.VITE_TOKEN }
+// })

@@ -12,8 +12,12 @@
 }
 
 .errorContainer h1{
-    font-size: 15rem;
-    margin-bottom: -3rem;
+    font-size: 10rem;
+    margin-bottom: -2rem;
+}
+
+.wordings{
+    color: #ffffff;
 }
 
 .errorBtn{
