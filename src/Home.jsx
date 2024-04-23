@@ -89,7 +89,7 @@ function Home() {
             onChange={fetchInputValue}
             placeholder="Enter GitHub Repo"
           />
-          <button type="submit">Search</button>
+          <button type="submit">Erro Page</button>
         </form>
         <div className="container">
 
